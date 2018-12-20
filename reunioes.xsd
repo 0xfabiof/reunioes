@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.0" vc:maxVersion="1.1"
+    xmlns:parte="http://www.example.org/tudo">
+    <xs:include schemaLocation="parte.xsd" />
+    
+<!-- Grupo geral para registo de pessoas - usado na lista de membros habitual e para definição de membros não habituais dentro de cada reunião -->
+    <xs:group name="pessoa_grupo">
+        <xs:sequence>
+            <xs:element name="nome">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="proprio" type="xs:string"/>
+                        <xs:element name="apelido" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="titulo" minOccurs="0" maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="([a-z])+\."/>
+                        <xs:maxLength value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>  
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:element name="documento">
+        <xs:complexType>
+            <xs:sequence>   
+
+<!-- Lista de membros habituais, utilizando o pessoa_grupo para a sua definição -->            
+    <xs:element name="membros_habituais">
+        <xs:complexType>
+         <xs:sequence>
+            <xs:element name="membro" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:group ref="pessoa_grupo"/>
+                    <xs:attribute name="id" type="xs:ID"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="reuniao" maxOccurs="unbounded">
+        <xs:complexType>
+            <xs:sequence>
+                
+<!-- Informação Geral sobre a Reunião -->
+                <xs:element name="orgao_reunido" type="xs:string"/>
+                <xs:element name="local" type="xs:string"/>
+                <xs:element name="data" type="xs:date"/>
+                <xs:element name="hora" type="xs:time"/>
+                
+<!-- Presidente e Redator - Referencias ao ID de uma pessoa definida numa das listas de membros (habituais ou não) -->
+                <xs:element name="presidente">
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:IDREF"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="redator">
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:IDREF"/>
+                    </xs:complexType>
+                </xs:element>
+                
+ <!-- Ordem de trabalho - Referencias a um ID dado para cada assunto -->
+                <xs:element name="ordem_de_trabalho">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="item">
+                                <xs:complexType>
+                                    <xs:attribute name="item_id" type="xs:IDREF"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+<!-- Membros - mínimo de 3 - Ocorrências mínima de três no xs:choice permite definir que estes possam vir tanto dos membros habituais como outros -->
+                <xs:element name="membros">
+                    <xs:complexType>
+                        <xs:choice minOccurs="3" maxOccurs="unbounded">
+                            <xs:element name="membro_habitual">
+                                <xs:complexType>
+                                    <xs:attribute name="id" type="xs:IDREF"/>
+                                    <xs:attribute name="presenca" type="xs:boolean"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="membro" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:group ref="pessoa_grupo"/>
+                                        <xs:element name="justificacao_ausencia" minOccurs="0"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID"/>
+                                    <xs:attribute name="presenca" type="xs:boolean"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                
+<!-- Assuntos com um ID por cada (referenciado na ordem de trabalho) e a respetiva votacao -->
+                <xs:element name="assuntos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="assunto" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="titulo" type="xs:string"/>
+                                        
+<!-- Modularização da discussao num ficheiro separado - Nesting de todas as possibilidades de ordens que as notas no texto anotado podem ter (ver parte.xsd) -->
+                                        <xs:group ref="discussao_parte"/>
+                                        
+<!-- Votação - xs:choice para a escolha do tipo de votacao (moção ou alternativa) e respetiva definição -->
+                                        <xs:element name="votacao">
+                                            <xs:complexType>
+                                                <xs:choice>
+                                                    <xs:element name="mocao">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="texto" type="xs:string"/>
+<!-- Os votos de cada votante referenciam o ID definido na lista de membros -->
+                                                                <xs:element name="membros_favor">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="membro_votante" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="id" type="xs:IDREF"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="membros_contra">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="membro_votante" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="id" type="xs:IDREF"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="membros_abstencao">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="membro_votante" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="id" type="xs:IDREF"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="alternativa">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="opcao" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="texto" type="xs:string"/>
+                                                                            <xs:element name="membros_votantes">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="membro_votante" maxOccurs="unbounded">
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="id" type="xs:IDREF"/>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>     
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>    
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:choice>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="assunto_id" type="xs:ID" use="required"/>
+                                </xs:complexType> 
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="tipo"/>
+            <xs:attribute name="id" type="xs:ID"/>
+        </xs:complexType>
+    </xs:element>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

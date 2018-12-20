@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT documento (membros_habituais,reuniao+)>
+    <!ELEMENT  membros_habituais (membro*)>
+        <!ELEMENT membro (nome,titulo*,justificacao_ausencia?)>
+            <!ATTLIST membro
+                id ID #REQUIRED
+                presenca (true|false) #IMPLIED
+            >
+            <!ELEMENT nome (proprio,apelido)>
+                <!ELEMENT proprio (#PCDATA)>
+                <!ELEMENT apelido (#PCDATA)>
+            <!ELEMENT titulo (#PCDATA)>
+            <!ELEMENT justificacao_ausencia (#PCDATA)>
+    <!ELEMENT reuniao (orgao_reunido,local,data,hora,presidente,redator,ordem_de_trabalho,membros,assuntos)>
+        <!ATTLIST reuniao
+            tipo CDATA #REQUIRED
+            id ID #REQUIRED
+        >
+        <!ELEMENT orgao_reunido (#PCDATA)>
+        <!ELEMENT local (#PCDATA)>
+        <!ELEMENT data (#PCDATA)>
+        <!ELEMENT hora (#PCDATA)>
+        <!ELEMENT presidente EMPTY>
+            <!ATTLIST presidente
+                id IDREF #REQUIRED
+            >
+        <!ELEMENT redator EMPTY>
+            <!ATTLIST redator
+                id IDREF #REQUIRED
+            >
+        <!ELEMENT ordem_de_trabalho (item*)>
+        <!ELEMENT item EMPTY>
+            <!ATTLIST item
+                item_id IDREF #REQUIRED>
+        <!ELEMENT  membros (membro_habitual*,membro*)>
+            <!ELEMENT membro_habitual EMPTY>
+                <!ATTLIST membro_habitual
+                id IDREF #REQUIRED
+                presenca (true|false) #IMPLIED
+            >
+        <!ELEMENT assuntos (assunto+)>
+            <!ELEMENT assunto (titulo,discussao,votacao)>
+                <!ATTLIST assunto
+                    assunto_id ID #REQUIRED>
+                <!ELEMENT discussao (#PCDATA | seccao | subseccao | paragrafo | palavra_membro | entrada_membro | saida_membro)*>
+                    <!ELEMENT seccao (#PCDATA | subseccao | paragrafo | palavra_membro | entrada_membro | saida_membro)*>
+                        <!ELEMENT subseccao (#PCDATA | paragrafo | palavra_membro | entrada_membro | saida_membro)*>
+                            <!ELEMENT paragrafo (#PCDATA | palavra_membro | entrada_membro | saida_membro)* >
+                                <!ELEMENT palavra_membro (#PCDATA | entrada_membro | saida_membro)*>
+                                    <!ATTLIST palavra_membro
+                                        id IDREF #REQUIRED    
+                                    >
+                                    <!ELEMENT entrada_membro EMPTY >
+                                        <!ATTLIST entrada_membro
+                                            id IDREF #REQUIRED
+                                        >
+                                    <!ELEMENT saida_membro EMPTY >
+                                        <!ATTLIST saida_membro
+                                            id IDREF #REQUIRED
+                                        >
+                <!ELEMENT votacao (mocao|alternativa)>
+                    <!ELEMENT mocao (texto,membros_favor,membros_contra,membros_abstencao)>
+                        <!ELEMENT texto (#PCDATA)>
+                        <!ELEMENT membros_favor (membro_votante*)>
+                        <!ELEMENT membros_contra (membro_votante*)>
+                        <!ELEMENT membros_abstencao (membro_votante*)>
+                            <!ELEMENT membro_votante EMPTY >
+                            <!ATTLIST  membro_votante
+                                id IDREF #REQUIRED
+                            >
+                    <!ELEMENT alternativa (opcao*)>
+                        <!ELEMENT opcao (texto,membros_votantes)>
+                        <!ELEMENT membros_votantes (membro_votante*)>
+                        
