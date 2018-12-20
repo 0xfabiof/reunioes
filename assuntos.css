@@ -1,0 +1,47 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+head {
+    background-color: black;
+	color: white;
+	
+}
+
+.seccao {
+    font-size: 22px;
+}
+
+.subseccao {
+    font-size: 20px;
+}
+
+.paragrafo {
+    font-size: 18px;
+}
+
+.palavra_membro {
+    font-size: 16px;
+}
+
+.entrada_membro {
+    color: green;
+}
+.saida_membro {
+    color: red;
+}
+
+.mocaopassa{
+    color: green;
+}
+.mocaoempata{
+    color:yellow;
+}
+.mocaochumba {
+    color:red;
+}
+
+.opcaovencedora{
+    color:green;
+}

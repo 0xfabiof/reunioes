@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/css" href="reunioes.xsl"?>
+<documento>
+    <membros_habituais>
+        <membro id="A">
+            <nome>
+                <proprio>António</proprio>
+                <apelido>Freitas</apelido>
+            </nome>
+            <titulo>prof.</titulo>
+            <titulo>dr.</titulo>
+        </membro>
+        <membro id="F">
+            <nome>
+                <proprio>Santiago</proprio>
+                <apelido>Silva</apelido>
+            </nome>
+            <titulo>eng.</titulo>
+        </membro>
+        <membro id="G">
+            <nome>
+                <proprio>Flávio</proprio>
+                <apelido>Ferreira</apelido>
+            </nome>
+            <titulo>dr.</titulo>
+        </membro>
+    </membros_habituais>
+    
+    <reuniao tipo="ordinaria" id="R1">
+        <orgao_reunido>Assembleia</orgao_reunido>
+        <local>Lisboa</local>
+        <data>1996-12-19</data>
+        <hora>16:00:00</hora>
+        <presidente id="A"/>
+        <redator id="B"/>
+        <ordem_de_trabalho>
+            <item item_id="A001"/>
+        </ordem_de_trabalho>
+        
+        <membros>
+            <membro_habitual id="A" presenca="true"/>
+            <membro id="B" presenca="false">
+                <nome>
+                    <proprio>Miguel</proprio>
+                    <apelido>Antunes</apelido>
+                </nome>
+                <titulo>prof.</titulo>
+                <justificacao_ausencia>doença</justificacao_ausencia>
+            </membro>
+            <membro id="C" presenca="false">
+                <nome>
+                    <proprio>Marco</proprio>
+                    <apelido>Teixeira</apelido>
+                </nome>
+                <titulo>eng.</titulo>
+                <justificacao_ausencia>familiar</justificacao_ausencia>
+            </membro>
+        </membros>
+        
+        <assuntos>
+            <assunto assunto_id="A001">
+                <titulo>Tourada</titulo>
+                <discussao>
+                    <seccao><subseccao>A Tauromaquia é toda a Cultura que envolve os touros. Esta começa nas Ganadarias (onde se criam os touros), espaços associados a grandes campos com espaço a perder de vista, passa pelas Coudelarias (onde se criam os cavalos), peças fundamentais na tauromaquia por serem necessários desde a criação dos touros até à sua lide, passa também pelos Trajes típicos associados aos touros, do traje dos Campinos (inspirado no traje típico do Ribatejo). <paragrafo> <palavra_membro id="A">Dos Cavaleiros (traje de montar a cavalo no século XVIII), dos Forcados (inspirado no traje dos campinos), dos Cavaleiros Amadores (traje tradicional português ou tradicional espanhol de montar a cavalo), dos Toureiros ("traje de luces"), dos Picadores (nas corridas em Espanha), dos Peões de Brega ou mesmo dos cavalos nas cortesias, entre outros, pelas Festas e Feiras tauromáquicas, das Largadas de touros, Garraiadas, Largadas à Corda etc., pelos Passodobles, estilo de música "de banda", muito antigo e criado com o propósito de dar ambiente às lides de touros, pelos bastantes Fados, Sevilhanas ou Flamencos de temática tauromáquica, pelos modos de vida das pessoas ligadas aos touros como os Ganaderos, Campinos, Cavaleiros Amadores, e passa por muitos e muitos outros exemplos da cultura tauromáquica, da qual dependem directa ou indirectamente dezenas, talvez centenas de milhares de pessoas em todo o mundo.</palavra_membro></paragrafo>
+                        <saida_membro id="A"/>
+                        <entrada_membro id="A"/>
+                        <paragrafo><palavra_membro id="B">As touradas representam o domínio do Homem, da razão, sobre a força bruta e violenta do animal, onde o Homem tenta lidar um animal que é livre de se defender, com objectivo de criar arte. Na tourada, o Homem representa os valores humanos da coragem, da superação, do valor perante a violência e o caos do touro. O filósofo francês Francis Wolff, Professor da Universidade de Paris-Sorbonne, escreveu, em 2011, um pequeno livro chamado "50 Razões para Defender as Corridas de Toiros" dirigido a aficionados e antitaurinos. Em 2011, a Federação Portuguesa das Associações Taurinas (Protoiro), entregou um documento explicativo sobre "«O que são as Touradas». pt.scribd.com" [7] e a sua importância, no Parlamento Português, na Comissão de Educação e Cultura. </palavra_membro></paragrafo>
+                                    Na cultura da Península Ibérica, o Circo de Termes parece ter sido um local sagrado onde os celtiberos praticavam o sacrifício ritual dos touros. A estela de Clunia é a mais antiga representação do confronto de um guerreiro com um touro.[2] As representações taurinas de variadas fontes arqueológicas encontradas na Península Ibérica, tais como os vasos de Líria, as esculturas dos Berrões, a bicha de Balazote ou o touro de Mourão estão, quase sempre, relacionadas com as noções de força, bravura, poder, fecundidade e vida, que simbolizam o sentido ritual e sagrado que o touro ibérico teve na Península.[3] </subseccao></seccao>
+                </discussao>
+           
+                <votacao>
+                    <mocao>
+                        <texto>
+                            É a favor de acabar com as touradas?
+                        </texto>
+                        <membros_favor>
+                            <membro_votante id="A"/>                
+                        </membros_favor>
+                        <membros_contra>
+                            <membro_votante id="A"/>  
+                        </membros_contra>
+                        <membros_abstencao>
+                            <membro_votante id="C"/>
+                        </membros_abstencao>
+                    </mocao>
+                </votacao>
+            </assunto>
+        </assuntos>
+    </reuniao>
+    
+    
+    <reuniao tipo="extraordinaria" id="R2">
+        <orgao_reunido>Conselho de Ministros</orgao_reunido>
+        <local>Porto</local>
+        <data>2001-09-11</data>
+        <hora>20:00:00</hora>
+        <presidente id="A"/>
+        <redator id="D"/>
+        <ordem_de_trabalho>
+            <item item_id="A001"/>
+        </ordem_de_trabalho>
+        
+        <membros>
+            <membro_habitual id="A" presenca="true"/>
+            <membro id="D" presenca="false">
+                <nome>
+                    <proprio>José</proprio>
+                    <apelido>Castro</apelido>
+                </nome>
+                <titulo>prof.</titulo>
+                <justificacao_ausencia>doença</justificacao_ausencia>
+            </membro>
+            <membro id="E" presenca="false">
+                <nome>
+                    <proprio>Tiago</proprio>
+                    <apelido>Viegas</apelido>
+                </nome>
+                <titulo>eng.</titulo>
+                <justificacao_ausencia>familiar</justificacao_ausencia>
+            </membro>
+        </membros>
+        
+        <assuntos>
+            <assunto assunto_id="A002">
+                <titulo>Tourada</titulo>
+                <discussao>
+                    <seccao><subseccao>A Tauromaquia é toda a Cultura que envolve os touros. Esta começa nas Ganadarias (onde se criam os touros), espaços associados a grandes campos com espaço a perder de vista, passa pelas Coudelarias (onde se criam os cavalos), peças fundamentais na tauromaquia por serem necessários desde a criação dos touros até à sua lide, passa também pelos Trajes típicos associados aos touros, do traje dos Campinos (inspirado no traje típico do Ribatejo). <paragrafo> <palavra_membro id="A">Dos Cavaleiros (traje de montar a cavalo no século XVIII), dos Forcados (inspirado no traje dos campinos), dos Cavaleiros Amadores (traje tradicional português ou tradicional espanhol de montar a cavalo), dos Toureiros ("traje de luces"), dos Picadores (nas corridas em Espanha), dos Peões de Brega ou mesmo dos cavalos nas cortesias, entre outros, pelas Festas e Feiras tauromáquicas, das Largadas de touros, Garraiadas, Largadas à Corda etc., pelos Passodobles, estilo de música "de banda", muito antigo e criado com o propósito de dar ambiente às lides de touros, pelos bastantes Fados, Sevilhanas ou Flamencos de temática tauromáquica, pelos modos de vida das pessoas ligadas aos touros como os Ganaderos, Campinos, Cavaleiros Amadores, e passa por muitos e muitos outros exemplos da cultura tauromáquica, da qual dependem directa ou indirectamente dezenas, talvez centenas de milhares de pessoas em todo o mundo.</palavra_membro></paragrafo>
+                        <saida_membro id="A"/>
+                        <entrada_membro id="A"/>
+                        <paragrafo><palavra_membro id="D">As touradas representam o domínio do Homem, da razão, sobre a força bruta e violenta do animal, onde o Homem tenta lidar um animal que é livre de se defender, com objectivo de criar arte. Na tourada, o Homem representa os valores humanos da coragem, da superação, do valor perante a violência e o caos do touro. O filósofo francês Francis Wolff, Professor da Universidade de Paris-Sorbonne, escreveu, em 2011, um pequeno livro chamado "50 Razões para Defender as Corridas de Toiros" dirigido a aficionados e antitaurinos. Em 2011, a Federação Portuguesa das Associações Taurinas (Protoiro), entregou um documento explicativo sobre "«O que são as Touradas». pt.scribd.com" [7] e a sua importância, no Parlamento Português, na Comissão de Educação e Cultura. </palavra_membro></paragrafo>
+                        Na cultura da Península Ibérica, o Circo de Termes parece ter sido um local sagrado onde os celtiberos praticavam o sacrifício ritual dos touros. A estela de Clunia é a mais antiga representação do confronto de um guerreiro com um touro.[2] As representações taurinas de variadas fontes arqueológicas encontradas na Península Ibérica, tais como os vasos de Líria, as esculturas dos Berrões, a bicha de Balazote ou o touro de Mourão estão, quase sempre, relacionadas com as noções de força, bravura, poder, fecundidade e vida, que simbolizam o sentido ritual e sagrado que o touro ibérico teve na Península.[3] </subseccao></seccao>
+                </discussao>
+                
+                <votacao>
+                    <alternativa>
+                        
+                        <opcao>
+                            <texto>Quero escolher a Opção nº1</texto>
+                            <membros_votantes>
+                                <membro_votante id="A"/>
+                                <membro_votante id="E"/>
+                            </membros_votantes>
+                        </opcao>
+                        
+                        <opcao>
+                            <texto>Quero escolher a Opção nº2</texto>
+                            <membros_votantes>
+                                <membro_votante id="D"/>
+                            </membros_votantes>
+                        </opcao>
+                        
+                    </alternativa>
+                </votacao>
+            </assunto>
+        </assuntos>
+    </reuniao>
+</documento>			

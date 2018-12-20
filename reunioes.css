@@ -1,0 +1,107 @@
+.blocoAssunto {
+    left: 60px;
+    right: 200px;
+}
+body {
+	background-color: black;
+	color: white;
+}
+
+head {
+    background-color: black;
+	color: white;
+	
+}
+ul {
+    list-style-type: none;
+}
+nav.indice h1 {
+    text-align:center;
+    align-content:center;
+}
+
+nav.indice li {
+	display: table;
+	margin-bottom: 12px;
+	
+}
+
+nav.indice li a {
+    padding-left:100px;
+    padding-right:100px;
+    position: relative;
+	text-decoration: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: white;
+	background-color: black;
+	border: solid white 1.5px;
+	left: 175%;
+}
+
+nav.indice li a:hover {
+	background-color: white;
+	color: black;
+}
+
+.reuniao {
+   width: 600px; 
+   margin:0 auto;
+   margin-left:44%;
+   list-style-type: none;
+}
+
+.reuniao ul {
+    list-style-type: none;
+}
+
+.membrosHabituaisUL ul {
+    list-style-type: none;
+}
+.metaReuniao1 {
+    position:relative;
+    left: -550px;
+}
+
+.metaReuniao1 li {
+    text-align: right;
+}
+
+.metaReuniao2 {
+    position:relative;
+    margin-top:-23.5%;
+    left: 40px;
+    
+}
+
+.tabelaMembros {
+    position:relative;
+    left: -220px;
+}
+.tabelaMembros td{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#membrosHabituais {
+    
+    text-align:center;
+    align-content:center;
+}
+
+.botaoAssunto {
+	display: block;
+	background-color: black;
+	color: white;
+	width: 270px;
+	text-decoration: none;
+	border: solid white 1.5px;
+	text-align: center;
+	font-size: 20px;
+	position: relative;
+	left: -10%;
+}
+.botaoAssunto:hover {
+	display: block;
+	background-color: white;
+	color: black;	
+}
