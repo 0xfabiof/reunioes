@@ -1,4 +1,4 @@
-## ptnac
+## reunioes
 XSL Script que converte ficheiros XML que descrevem reuniões em páginas web (html+stylesheet). 
 
 Realizado no âmbito da Unidade Curricular de Processamento de Documentos Estruturados do Mestrado em Segurança Informática
