@@ -2,7 +2,7 @@
 
 XSL Script that converts XML files describing Meetings (Political) to fully graphical formatted webpages (html + stylesheet)
 
-Project done for the course of Structured Documents Processing, in the Master's in Information Security.
+Project done for the course of Structured Documents Processing, of the Master's in Information Security.
 
 Lecturer: Prof. José Paulo Leal
 
