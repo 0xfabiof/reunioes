@@ -1,19 +1,21 @@
-## reunioes
-XSL Script que converte ficheiros XML que descrevem reuniões em páginas web (html+stylesheet). 
+## reunioes | meetings
 
-Realizado no âmbito da Unidade Curricular de Processamento de Documentos Estruturados do Mestrado em Segurança Informática
+XSL Script that converts XML files describing Meetings (Political) to fully graphical formatted webpages (html + stylesheet)
 
-Docente: Prof. José Paulo Leal
+Project done for the course of Structured Documents Processing, in the Master's in Information Security.
 
-Departamento de Ciência de Computadores
+Lecturer: Prof. José Paulo Leal
 
-Faculdade de Ciências da Universidade do Porto
+Department of Computer Science
 
-## Utilização
-Processar documento instancias.xml com script.xsl no editor XML (Eclipse Web, Oxygen ou outros)
+Faculty of Sciences, University of Porto
 
-## Resultado
-Produção automática de página web completa com o seguinte aspeto:
+## Utilization
+Use your XML editor (Eclipse Web, Oxygen, etc.) to transform the instance file (instancias.xml) with the script file (script.xsl)
+
+## Results
+
+Automatic generation of a fully graphical formatted webpage that looks like this:
 ![Output 1](https://i.imgur.com/ycllJl4.png)
 ![Output 2](https://i.imgur.com/nQ0NA2C.png)
 ![Output 3](https://i.imgur.com/TiE6j3a.png)
