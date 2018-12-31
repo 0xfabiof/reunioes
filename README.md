@@ -10,7 +10,7 @@ Department of Computer Science
 
 Faculty of Sciences, University of Porto
 
-## Utilization
+## Usage
 Use your XML editor (Eclipse Web, Oxygen, etc.) to transform the instance file (instancias.xml) with the script file (script.xsl)
 
 ## Results
